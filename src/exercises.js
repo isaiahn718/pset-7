@@ -74,7 +74,27 @@ function difference(numbers) {
 }
 
 function max(number) {
-  // write your code here
+  if (!number || number.length < 3 || number.length % 2 == 0) {
+     return undefined;
+   }
+   if (number.some(isNaN)) {
+     return undefined;
+   }
+   let first = number[0]
+   let last = number[number.length-1]
+   let middle = number[((number.length/2)-1) + 0.5]
+   if ((first > last) && (first > middle)) {
+     return first;
+   }
+   else if ((middle > last) && (middle > first)) {
+     return middle;
+   }
+   else if ((last > first) && (last > middle)) {
+     return last;
+   }
+   else {
+     return first;
+   }
 }
 
 function middle(values) {
