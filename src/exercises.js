@@ -98,7 +98,18 @@ function max(number) {
 }
 
 function middle(values) {
-  // write your code here
+  let array = []
+    if (!values || values.length < 3 || values.length % 2 == 0) {
+      return [];
+    }
+    let index = (values.length/2)-1 + 0.5
+    let two_middle = values[index]
+    let one_middle = values[index - 1]
+    let three_middle = values[index + 1]
+    array.push(one_middle);
+    array.push(two_middle);
+    array.push(three_middle);
+    return array;
 }
 
 function increasing(numbers) {
