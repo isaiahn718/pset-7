@@ -148,7 +148,23 @@ function increasing(numbers) {
   }
 }
 function everywhere(values, x) {
-  // write your code here
+  if (values == undefined || x === undefined) {
+   return false;
+ }
+ else if (values.length < 1) {
+   return false;
+ }
+ else if (!values.includes(x)) {
+   return false;
+ }
+ else {
+   for (let i = values.indexOf(x); i < values.length; i++) {
+     if (values[i] === values[i + 1] && values[i + 1] !== undefined) {
+       return true;
+       break;
+     }
+     else if (x === 0) {
+       return false;
 }
 
 function consecutive(numbers) {
