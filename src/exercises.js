@@ -3,21 +3,14 @@ function commonEnd(a, b) {
     return false;
   }
   if (a[0] ===b[0]) {
-
-   return true;
-
- }
-
- else if (a[a.length-1] === b[b.length-1]) {
-
-   return true;
-
- }
-
- else {
-
-   return false;
- }
+    return true;
+  }
+  else if (a[a.length-1] === b[b.length-1]) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 function endsMeet(values, n) {
@@ -75,41 +68,41 @@ function difference(numbers) {
 
 function max(number) {
   if (!number || number.length < 3 || number.length % 2 == 0) {
-     return undefined;
-   }
-   if (number.some(isNaN)) {
-     return undefined;
-   }
-   let first = number[0]
-   let last = number[number.length-1]
-   let middle = number[((number.length/2)-1) + 0.5]
-   if ((first > last) && (first > middle)) {
-     return first;
-   }
-   else if ((middle > last) && (middle > first)) {
-     return middle;
-   }
-   else if ((last > first) && (last > middle)) {
-     return last;
-   }
-   else {
-     return first;
-   }
+    return undefined;
+  }
+  if (number.some(isNaN)) {
+    return undefined;
+  }
+  let first = number[0]
+  let last = number[number.length-1]
+  let middle = number[((number.length/2)-1) + 0.5]
+  if ((first > last) && (first > middle)) {
+    return first;
+  }
+  else if ((middle > last) && (middle > first)) {
+    return middle;
+  }
+  else if ((last > first) && (last > middle)) {
+    return last;
+  }
+  else {
+    return first;
+  }
 }
 
 function middle(values) {
   let array = []
-    if (!values || values.length < 3 || values.length % 2 == 0) {
-      return [];
-    }
-    let index = (values.length/2)-1 + 0.5
-    let two_middle = values[index]
-    let one_middle = values[index - 1]
-    let three_middle = values[index + 1]
-    array.push(one_middle);
-    array.push(two_middle);
-    array.push(three_middle);
-    return array;
+  if (!values || values.length < 3 || values.length % 2 == 0) {
+    return [];
+  }
+  let index = (values.length/2)-1 + 0.5
+  let two_middle = values[index]
+  let one_middle = values[index - 1]
+  let three_middle = values[index + 1]
+  array.push(one_middle);
+  array.push(two_middle);
+  array.push(three_middle);
+  return array;
 }
 
 function increasing(numbers) {
@@ -124,7 +117,7 @@ function increasing(numbers) {
     if (tmp[i] % 1 != 0) {
       return false;
     }
-}
+  }
   let counter = 0
   let one_last = -1
   for (x = 0; x < tmp.length; x++) {
@@ -147,25 +140,26 @@ function increasing(numbers) {
     return false;
   }
 }
+
 function everywhere(values, x) {
   if (values == undefined || x === undefined) {
-   return false;
- }
- else if (values.length < 1) {
-   return false;
- }
- else if (!values.includes(x)) {
-   return false;
- }
- else {
-   for (let i = values.indexOf(x); i < values.length; i++) {
-     if (values[i] === values[i + 1] && values[i + 1] !== undefined) {
-       return true;
-       break;
-     }
-     else if (x === 0) {
-       return false;
-       break;
+    return false;
+  }
+  else if (values.length < 1) {
+    return false;
+  }
+  else if (!values.includes(x)) {
+    return false;
+  }
+  else {
+    for (let i = values.indexOf(x); i < values.length; i++) {
+      if (values[i] === values[i + 1] && values[i + 1] !== undefined) {
+        return true;
+        break;
+      }
+      else if (x === 0) {
+        return false;
+        break;
       }
       else if (values[i] === values[i + 2] && values[i + 2] !== undefined && values[i + 1] !== values[i]) {
         return true;
@@ -185,39 +179,38 @@ function everywhere(values, x) {
 
 function consecutive(numbers) {
   if (!numbers || numbers.length < 3) {
-     return false;
-   }
-   for (let i = 0; i < numbers.length - 2; i++ ) {
-     let index = numbers[i];
-     let index_2 = numbers[i + 1];
-     let index_3 = numbers[i + 2];
-     if (Number.isInteger(index) == false || Number.isInteger(index_2) == false || Number.isInteger(index_3) == false ) {
-       return false;
-     }
-     if (index % 2 == 0 && index_2 % 2 == 0 && index_3 % 2 == 0) {
-     return true;
-   }
-   else if (index % 2 == 1 && index_2 % 2 == 1 && index_3 % 2 == 1) {
-     return true;
-   }
- }
- return false;
+    return false;
+  }
+  for (let i = 0; i < numbers.length - 2; i++ ) {
+    let index = numbers[i];
+    let index_2 = numbers[i + 1];
+    let index_3 = numbers[i + 2];
+    if (Number.isInteger(index) == false || Number.isInteger(index_2) == false || Number.isInteger(index_3) == false ) {
+      return false;
+    }
+    if (index % 2 == 0 && index_2 % 2 == 0 && index_3 % 2 == 0) {
+      return true;
+    }
+    else if (index % 2 == 1 && index_2 % 2 == 1 && index_3 % 2 == 1) {
+      return true;
+    }
+  }
+  return false;
 }
-
 function balance(numbers) {
   let size = 0
- let sum1 = 0
- let sum2 = 0
- let count = 0
- if (!numbers || numbers.length < 2) {
-   return false;
- }
- for (i = 0; i < numbers.length; i++) {
-   if (!(Number.isInteger(numbers[i]))) {
-     return false;
-   }
- }
- for (z = 0; z < numbers.length; z++) {
+  let sum1 = 0
+  let sum2 = 0
+  let count = 0
+  if (!numbers || numbers.length < 2) {
+    return false;
+  }
+  for (i = 0; i < numbers.length; i++) {
+    if (!(Number.isInteger(numbers[i]))) {
+      return false;
+    }
+  }
+  for (z = 0; z < numbers.length; z++) {
     if (numbers[z] == undefined) {
       return true;
     }
@@ -239,8 +232,6 @@ function balance(numbers) {
   if (count == 0) {
     return false;
   }
-}
-  console.log("test");
 }
 
 function clumps(values) {
