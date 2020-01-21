@@ -113,7 +113,17 @@ function middle(values) {
 }
 
 function increasing(numbers) {
-  // write your code here
+  let tmp = numbers;
+  if (!tmp || tmp.length < 3) {
+    return false;
+  }
+  if (tmp.some(isNaN)) {
+    return false;
+  }
+  for (i = 0; i < tmp.length; i++) {
+    if (tmp[i] % 1 != 0) {
+      return false;
+    }
 }
 
 function everywhere(values, x) {
