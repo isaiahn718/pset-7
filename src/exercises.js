@@ -125,7 +125,28 @@ function increasing(numbers) {
       return false;
     }
 }
-
+  let counter = 0
+  let one_last = -1
+  for (x = 0; x < tmp.length; x++) {
+    if (tmp[x] == one_last + 1) {
+      one_last = tmp[x]
+      if (tmp[x+1] == one_last + 1) {
+        return true
+        counter = 1
+        break;
+      }
+      else {
+      one_last = -1
+    }
+      }
+    else {
+      one_last = tmp[x]
+    }
+  }
+  if (counter == 0) {
+    return false;
+  }
+}
 function everywhere(values, x) {
   // write your code here
 }
