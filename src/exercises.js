@@ -165,6 +165,22 @@ function everywhere(values, x) {
      }
      else if (x === 0) {
        return false;
+       break;
+      }
+      else if (values[i] === values[i + 2] && values[i + 2] !== undefined && values[i + 1] !== values[i]) {
+        return true;
+        break;
+      }
+        else if (values[i] === values[i + 3] && values[i + 3] !== undefined && (values[i + 1] && values[i + 2]) !== values[i + 3]) {
+        return true;
+        break;
+      }
+      else {
+        return false;
+        break;
+      }
+    }
+  }
 }
 
 function consecutive(numbers) {
