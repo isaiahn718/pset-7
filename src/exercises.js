@@ -244,7 +244,40 @@ function balance(numbers) {
 }
 
 function clumps(values) {
-  // write your code here
+  if (!values) {
+    return -1;
+  }
+  if (values.length < 2) {
+    return 0;
+  }
+  let last = values[0];
+  let current;
+  let clump = 0
+  let count = 0
+  let count2 = 0
+  for (x = 1; x < values.length; x++) {
+    current = values[x]
+    if (last === current) {
+      clump = clump + 1
+      for (y = x; y < values.length; y++) {
+        last = current
+        current = values[y]
+        if (!(last === current)) {
+          count = 1
+          x = y
+          break;
+        }
+        else {
+          count = -1
+        }
+      }
+    }
+    if (count == -1) {
+      break;
+    }
+    last = current
+  }
+  return clump;
 }
 
 /*
