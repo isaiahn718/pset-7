@@ -184,7 +184,24 @@ function everywhere(values, x) {
 }
 
 function consecutive(numbers) {
-  // write your code here
+  if (!numbers || numbers.length < 3) {
+     return false;
+   }
+   for (let i = 0; i < numbers.length - 2; i++ ) {
+     let index = numbers[i];
+     let index_2 = numbers[i + 1];
+     let index_3 = numbers[i + 2];
+     if (Number.isInteger(index) == false || Number.isInteger(index_2) == false || Number.isInteger(index_3) == false ) {
+       return false;
+     }
+     if (index % 2 == 0 && index_2 % 2 == 0 && index_3 % 2 == 0) {
+     return true;
+   }
+   else if (index % 2 == 1 && index_2 % 2 == 1 && index_3 % 2 == 1) {
+     return true;
+   }
+ }
+ return false;
 }
 
 function balance(numbers) {
