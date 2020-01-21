@@ -205,7 +205,18 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
-  // write your code here
+  let size = 0
+ let sum1 = 0
+ let sum2 = 0
+ let count = 0
+ if (!numbers || numbers.length < 2) {
+   return false;
+ }
+ for (i = 0; i < numbers.length; i++) {
+   if (!(Number.isInteger(numbers[i]))) {
+     return false;
+   }
+ }
   console.log("test");
 }
 
